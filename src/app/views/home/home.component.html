@@ -1,0 +1,54 @@
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="solicitudModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nueva Solicitud</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">¿Desea hacer una nueva solicitud?</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Cancelar
+        </button>
+        <button type="button" class="btn btn-primary" id="confirmarSolicitud">
+          Confirmar
+        </button>
+      </div>
+    </div>
+  </div>
+</div><div id="calendar"></div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+  var calendarEl = document.getElementById("calendar");
+  var calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: "dayGridMonth",
+    headerToolbar: {
+      left: "prev,next today",
+      center: "title",
+      right: "dayGridMonth,timeGridWeek,timeGridDay",
+    },
+    dateClick: function (info) {
+      // Aquí puedes agregar tu lógica para manejar el clic en una fecha
+    },
+    events: [
+      // Aquí puedes agregar tus eventos
+    ],
+  });
+  calendar.render();
+});
+</script>
